@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { slide as Menu } from "react-burger-menu";
-// import KzLogo from './KzLogo'
 // import '../css/HeaderLogo.css'
 
 const HeaderMobile = () => {
@@ -50,38 +49,38 @@ const HeaderMobile = () => {
   );
 
   return (
-    <div className="header-mobile">
-      <div className="logo-container">
-        <NavLink to="/">logo</NavLink>
-      </div>
+    // <div className="header-mobile">
+    //   <div className="logo-container">
+    //     <NavLink to="/">logo</NavLink>
+    //   </div>
 
-      <Menu
-        isOpen={isOpen}
-        onOpen={handleIsOpen}
-        onClose={handleIsOpen}
-        styles={memoizedStyles}
+    <Menu
+      isOpen={isOpen}
+      onOpen={handleIsOpen}
+      onClose={handleIsOpen}
+      styles={memoizedStyles}
+    >
+      <NavLink id="login" className="menu-item" onClick={closeSideBar} to="/">
+        login
+      </NavLink>
+      <NavLink
+        id="about"
+        className="menu-item"
+        to="/about"
+        onClick={closeSideBar}
       >
-        <NavLink id="login" className="menu-item" onClick={closeSideBar} to="/">
-          login
-        </NavLink>
-        <NavLink
-          id="about"
-          className="menu-item"
-          to="/about"
-          onClick={closeSideBar}
-        >
-          About
-        </NavLink>
-        <NavLink
-          id="contact"
-          className="menu-item"
-          onClick={closeSideBar}
-          to="/contact"
-        >
-          Contact
-        </NavLink>
-      </Menu>
-    </div>
+        About
+      </NavLink>
+      <NavLink
+        id="contact"
+        className="menu-item"
+        onClick={closeSideBar}
+        to="/contact"
+      >
+        Contact
+      </NavLink>
+    </Menu>
+    // </div>
   );
 };
 

@@ -17,6 +17,9 @@ const client = new Client({
   user: process.env.PGUSER,
 });
 
+//göra images mappen tillgänglig via http://localhost/images
+app.use("/images", express.static("images"));
+
 client.connect();
 
 app.get("/", (request, response) => {
@@ -26,6 +29,6 @@ app.get("/", (request, response) => {
   response.send("Formuläret är mottaget.");
 });
 
-app.listen(3000, () => {
-  console.log("Redo på http://localhost:3000/");
+app.listen(8000, () => {
+  console.log("Redo på http://localhost:8000/");
 });

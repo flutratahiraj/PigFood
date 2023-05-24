@@ -14,12 +14,14 @@ import LandingPage from "./views/LandingPage";
 import HomePage from "./views/HomePage";
 import DetailPage from "./views/DetailPage";
 import CheckOutPage from "./views/CheckOutPage";
+import ScrollToTopArrow from "./components/ScrollToTopArrow";
 function Root() {
   return (
 
 
     <>
       <HeaderMobile />
+      <ScrollToTopArrow />
       <Outlet />
       <Footer />
     </>

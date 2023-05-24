@@ -48,11 +48,11 @@ const ScrollToTopArrow = () => {
       <i className="bi bi-arrow-up-circle-fill"  style={{
       position:"fixed",
       bottom:"20px",
-      right: "50px",
+      right: "25px",
     //   height: "50px",
       width :"50px",
-      fontSize: "50px",
-      color: "#212121",
+      fontSize: "30px",
+      color: "#585858",
     }}></i>
     </button>
   ) : null;

@@ -28,7 +28,7 @@ app.get("/api", (_request, response) => {
 
 // // Tidigare kod
 // //göra images mappen tillgänglig via http://localhost/images
-// app.use("/images", express.static("images"));
+app.use("/images", express.static("images"));
 
 // // Tidigare kod,
 // //men borde nog ingå även via publicering...

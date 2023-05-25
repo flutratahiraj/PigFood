@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "./components/Footer";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HeaderMobile from "./components/HeaderMobile";
 import "./App.css";

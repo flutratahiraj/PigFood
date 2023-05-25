@@ -9,9 +9,12 @@ const ScrollToTopArrow = () => {
     const scrollTop = window.pageYOffset;
 //set the arrows visible to tro when user scolls 100px
     if (scrollTop > 100) {
+      console.log("truesds")
       setIsVisible(true);
     } else {
       setIsVisible(false);
+      console.log("false")
+
     }
   };
 

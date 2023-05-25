@@ -1,8 +1,19 @@
 import React from "react";
 
+//från handout: "publicering via Heroku"
+import { useEffect } from 'react'
 
 
 function CarouselCard() {
+//från handout: "publicering via Heroku"
+useEffect(() => {
+  fetch('/api')
+    .then((response) => response.json())
+    .then((result) => {
+      alert(`Hello ${result.hello}!`)
+    })
+}, [])
+
   return (
     <div>
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">

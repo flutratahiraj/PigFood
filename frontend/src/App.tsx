@@ -8,6 +8,7 @@ import LandingPage from "./views/LandingPage";
 import HomePage from "./views/HomePage";
 import DetailPage from "./views/DetailPage";
 import CheckOutPage from "./views/CheckOutPage";
+import ScrollToTopArrow from "./components/ScrollToTopArrow";
 // import Navbar from "./components/Navbar";
 // import MySignUpForm from "./components/MySignupForm";
 
@@ -16,6 +17,7 @@ function Root() {
 
     <>
       <HeaderMobile />
+      <ScrollToTopArrow />
       <Outlet />
       <Footer />
     </>

@@ -1,26 +1,24 @@
 import React from "react";
 import Footer from "./components/Footer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 // import logo from './logo.svg';
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HeaderMobile from "./components/HeaderMobile";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Landing from "./views/Landing";
-
-
-function App() {
+// import Navbar from "./components/Navbar";
 // import MySignUpForm from "./components/MySignupForm";
 import LandingPage from "./views/LandingPage";
 import HomePage from "./views/HomePage";
 import DetailPage from "./views/DetailPage";
 import CheckOutPage from "./views/CheckOutPage";
+
 function Root() {
   return (
-
     <>
       <HeaderMobile />
+      {/* <MySignUpForm /> */}
       <Outlet />
+      <Footer />
     </>
   );
 }

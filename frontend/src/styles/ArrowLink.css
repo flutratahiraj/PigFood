@@ -1,0 +1,21 @@
+.menu-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-container {
+  /* justify-content: space-evenly; */
+  width: 22px;
+  height: 22px;
+  padding-left: 135px;
+  padding-right: 10px;
+  /* flex: none;
+  order: 1;
+  flex-grow: 0; */
+}
+.arrow-icon {
+  /* align-items: flex-end; */
+}
+
+/* top: 9px;
+  left: 222px; */

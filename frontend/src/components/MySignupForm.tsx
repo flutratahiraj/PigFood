@@ -29,9 +29,7 @@ const handleSubmit = async (values: any) => {
 const CreateAccountForm = () => {
   return (
     <div style={{ backgroundColor: "blue", padding: "20px" }}>
-      <h1 style={{ backgroundColor: "yellow", padding: "10px" }}>
-        Skapa konto
-      </h1>
+      <h1 style={{ color: "yellow", padding: "10px" }}>Skapa konto</h1>
       <Formik
         initialValues={{
           firstName: "",

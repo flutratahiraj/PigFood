@@ -96,6 +96,19 @@ const LandingPage: React.FC = () => {
           ))}
         </div>
       </div>
+      <h1 className="Food-h1">Think of all <br></br> the food you<br></br> can save!</h1>
+      <button>Join the pigsty!</button>
+      <div className="carousel">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Image ${index + 1}`}
+            className="carousel-image"
+          />
+        ))}
+      </div>
+
     </>
   );
 };

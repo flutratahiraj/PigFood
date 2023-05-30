@@ -1,20 +1,12 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    position: relative;
-    text-align:center;
-   width:100%;
-  }
 
-  .faq-section {
+.faq-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1;
+    background-color:#FFE3F0;
+    height:689px;
+    margin-bottom:-50px;
 
   }
   .faq-item{
@@ -47,6 +39,8 @@
   }
 .faq-title{
   font-family: 'Clash Grotesk', sans-serif;
+  margin-top:40px;
+  text-align:center;
 
 }
   .question {
@@ -58,38 +52,12 @@
   .question span {
     margin-right: 5px;
   }
-  button {
-    background-color: #F7F800;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    height:50px;
-    width:161px;
-    margin-bottom:30px;
-    font-family: 'Clash Grotesk', sans-serif;
-    font-weight:bold;
-  }
 
   .Food-h1{
     color:blue;
     font-size:32px;
     font-family: 'Panchang', sans-serif;
+    text-align:center;
+    background-color:#FFE3F0;
+    padding-bottom:80px;
   }
-  .carousel-image {
-    margin-right: 20px;
-  }
-
-.Landing h1{
-
-    font-size: 32px;
-    color:#FFE3F0;
-    font-family: 'Panchang', sans-serif;
-}
-
-.Landing p{
-  font-size:18px;
-  color:#FFE3F0;
-  font-family: 'Clash Grotesk', sans-serif;
-}

@@ -52,7 +52,7 @@ const HeaderMobile = () => {
     <div className="header-mobile">
       <div className="logo-container">
         <NavLink to="/">
-        <img src="/icon-0.svg" alt="Logo" style={{ width: "50px", height:"30px", padding:"20px" }} />
+
         </NavLink>
 
       </div>

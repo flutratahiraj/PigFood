@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     <footer>
       <h2>Pigsty</h2>
     <nav>
-      <a href="">Log in</a>
+      <a href="">Log in </a>
       <a href="">Create account</a>
       <a href="">About Pig Food</a>
       <a href="">Get Help</a>
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
       <h2>Subscribe to latest PigNews</h2>
       <div className="subscribe">
         <input type="text" placeholder="Email@example.com"/>
-        <button>Join the pigsty!</button>
+
         <img src="/icon-0.svg" alt="Logo" style={{ width: "50px", height:"30px", padding:"20px" }} />
         <h3>ShrimpTech Ltd. All rights reserved</h3>
       </div>

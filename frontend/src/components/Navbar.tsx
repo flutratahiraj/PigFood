@@ -4,11 +4,11 @@ import HeaderMobile from './HeaderMobile';
 
 const Navbar = () => {
   return (
-    <div>
-
-        </div>
-
+    <div className="Navbar-container">
+      <img src="logo-navbar.png" alt="Logo" className="navbar-logo" />
+    </div>
   );
 };
+
 
 export default Navbar;

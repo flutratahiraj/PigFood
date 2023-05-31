@@ -1,0 +1,201 @@
+/* .carousel-control-prev,
+.carousel-control-next {
+  background-color: #e1e1e1;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+} */
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 2.48px 2.48px rgb(0 0 0 / 25%);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #aec9f9;
+  animation: slideAnimation 3s linear infinite;
+}
+
+.card:hover::before {
+  animation-play-state: paused;
+}
+
+.slide-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.svg-location {
+  display: flex;
+  gap: 6px;
+  font-weight: 600;
+  color: #094ec7;
+}
+/* */
+.card-body {
+  font-family: "Clash Grotesk";
+  background-color: #f7f800;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  text-align: left;
+  /* margin-bottom: -20px; */
+}
+.card-title {
+  color: #094ec7;
+  font-weight: 600;
+}
+.title-timer {
+  color: #094ec7;
+  /* font-weight: 600; */
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  padding: 0px;
+  gap: 118px;
+}
+.card-timer {
+  font-weight: 600;
+}
+.price-tag {
+  color: #094ec7;
+  font-weight: 400;
+}
+.meal-title {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #094ec7;
+}
+.carousel .slide .card-img-top {
+  width: 100%;
+  height: 200px; /* Justera höjden efter önskad storlek */
+  object-fit: cover;
+}
+
+.carousel-desktop {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel-desktop .carousel .slider-wrapper {
+  width: 100%;
+}
+
+.carousel-desktop .carousel .slider {
+  display: flex;
+}
+
+.carousel-desktop .carousel .slider .slide {
+  flex: 0 0 33.33%;
+  margin: 0 10px;
+}
+
+.carousel-desktop .carousel .slider .slide .card {
+  transition: box-shadow 0.3s ease;
+}
+
+.carousel-desktop .carousel .slider .slide .card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Separation och synlighet i desktopvyn */
+.carousel-desktop {
+  margin: 20px;
+}
+
+/* Synlighet för pilarna i desktopvyn */
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  opacity: 1;
+}
+
+/* Separation i mobilvyn */
+.carousel .carousel .slide .card {
+  margin-right: 10px;
+}
+
+.carousel .carousel .slide .card:last-child {
+  margin-right: 0;
+}
+
+/* Hover-effekt för kortet */
+/* .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+.card {
+  position: relative;
+
+  /* hover-effekt för att visa SvgAnimation */
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &:hover .svg-animation {
+    pointer-events: auto;
+  }
+}
+
+/* Aktivt kort (centrerat kort i desktopvyn) */
+.carousel .slide .carousel-item .card:nth-child(2) {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placera pilarna i mitten av korten */
+.carousel .thumbs-wrapper {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Gör pilarna runda */
+.carousel .thumbs-wrapper .thumb {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+}
+
+/* Justera pilarnas position */
+.carousel .carousel-control .control-arrow::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.carousel .slide .card {
+  width: 300px; /* Justera bredden efter önskat kortstorlek */
+  margin: 0 5px;
+}
+
+.carousel.carousel-slider .control-arrow {
+  margin-top: 70px;
+}
+/* Om jag vil ändra min knapps form, så kommer knappen på landingpage att ändras, eftersom minkapp kommer från bootstrap misstänker jag */
+.cardBorder {
+  border-radius: 10px;
+}

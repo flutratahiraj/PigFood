@@ -9,6 +9,7 @@ import HomePage from "./views/HomePage";
 import DetailPage from "./views/DetailPage";
 import CheckOutPage from "./views/CheckOutPage";
 import ScrollToTopArrow from "./components/ScrollToTopArrow";
+import AboutPage from "./views/AboutPage";
 // import Navbar from "./components/Navbar";
 // import MySignUpForm from "./components/MySignupForm";
 
@@ -40,6 +41,10 @@ function App() {
         {
           element: <CheckOutPage />,
           path: "/checkoutpage",
+        },
+        {
+          element: <AboutPage />,
+          path: "/about",
         },
       ],
       element: <Root />,

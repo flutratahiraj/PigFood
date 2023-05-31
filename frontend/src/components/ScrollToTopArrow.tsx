@@ -55,7 +55,8 @@ const ScrollToTopArrow = () => {
     //   height: "50px",
       width :"50px",
       fontSize: "30px",
-      color: "#585858",
+      color: "#f7f800",
+      zIndex: "6"
     }}></i>
     </button>
   ) : null;

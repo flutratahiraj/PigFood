@@ -1,0 +1,54 @@
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  background-color: #ffe3f0;
+  height: 689px;
+  margin-bottom: -50px;
+}
+.question {
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: "Clash Grotesk", sans-serif;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.answer {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  float: left;
+}
+.faq-title {
+  font-family: "Clash Grotesk", sans-serif;
+  margin-top: 40px;
+  text-align: center;
+}
+.question {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.question span {
+  margin-right: 5px;
+}
+
+.Food-h1 {
+  color: blue;
+  font-size: 32px;
+  font-family: "Panchang", sans-serif;
+  text-align: center;
+  background-color: #ffe3f0;
+  padding-bottom: 80px;
+}

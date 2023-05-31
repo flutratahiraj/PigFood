@@ -1,5 +1,5 @@
 footer {
-  background-color: black;
+  background-color: #094ec7;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,6 @@ nav a {
   color: #ffe3f0;
   margin-bottom: 10px;
   display: block;
-  padding: 10px;
   text-decoration: none;
   font-family: "Clash Grotesk", sans-serif;
 }
@@ -74,18 +73,11 @@ nav a {
   box-sizing: border-box;
 }
 
-.subscribe button {
-  background-color: #f7f800;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: "Clash Grotesk", sans-serif;
-  font-weight: bold;
-}
-
 .subscribe h3 {
   font-family: "Clash Grotesk", sans-serif;
   font-weight: lighter;
+}
+
+button {
+  color: blue;
 }

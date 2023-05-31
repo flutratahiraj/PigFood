@@ -1,0 +1,46 @@
+.Parent > h1{
+  color:blue;
+  margin-bottom:10px;
+  font-family: 'Panchang', sans-serif;
+  text-align:center;
+}
+.Parent{
+  background-color:yellow;
+  padding:15px 0 30px 0;
+  margin-bottom:16px;
+  border-radius:10px;
+}
+.Hemcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.Hemrow {
+  display: flex;
+  justify-content: center;
+}
+
+.Hembox {
+  text-align: center;
+  background-color: blue;
+  width: 137px;
+  height: 82px;
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Clash Grotesk', sans-serif;
+  color:#FFE3F0;
+  border-radius:10px;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0;
+  font-weight:lighter;
+}

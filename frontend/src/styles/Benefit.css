@@ -1,0 +1,71 @@
+.Benefit {
+    text-align: center;
+    background-color: #094EC7;
+    color: pink;
+    padding: 30px;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .Benefit h1 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Panchang', sans-serif;
+    text-align:left;
+  }
+
+  .Benefit p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Clash Grotesk', sans-serif;
+    text-align:left;
+  }
+
+  .Benefit ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .Benefit li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Clash Grotesk', sans-serif;
+    text-align:left;
+  }
+
+  .Sec-Benefit {
+    text-align: center;
+    background-color: #094EC7;
+    color: pink;
+    padding: 30px;
+  }
+
+  .Sec-Benefit h1 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Panchang', sans-serif;
+    text-align:left;
+  }
+
+  .Sec-Benefit p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: 'Clash Grotesk', sans-serif;
+    text-align:left;
+  }
+
+  .Sec-Benefit ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .Sec-Benefit li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Clash Grotesk', sans-serif;
+    text-align:left;
+  }
+
+  .Benefit img{
+    margin-bottom:-30px;
+}

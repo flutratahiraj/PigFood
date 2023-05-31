@@ -9,9 +9,12 @@ const ScrollToTopArrow = () => {
     const scrollTop = window.pageYOffset;
 //set the arrows visible to tro when user scolls 100px
     if (scrollTop > 100) {
+      console.log("truesds")
       setIsVisible(true);
     } else {
       setIsVisible(false);
+      console.log("false")
+
     }
   };
 
@@ -52,7 +55,8 @@ const ScrollToTopArrow = () => {
     //   height: "50px",
       width :"50px",
       fontSize: "30px",
-      color: "#585858",
+      color: "#f7f800",
+      zIndex: "6"
     }}></i>
     </button>
   ) : null;

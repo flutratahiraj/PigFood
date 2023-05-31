@@ -7,25 +7,23 @@ import LandingPage from "./views/LandingPage";
 import HomePage from "./views/HomePage";
 import DetailPage from "./views/DetailPage";
 import CheckOutPage from "./views/CheckOutPage";
-import CarouselCard from "./components/CarouselCard";
 import LogIn from "./components/LogIn";
+import ScrollToTopArrow from "./components/ScrollToTopArrow";
+import AboutPage from "./views/AboutPage";
+// import Navbar from "./components/Navbar";
+// import MySignUpForm from "./components/MySignupForm";
 
 function Root() {
   return (
     <>
+      <ScrollToTopArrow />
       <Outlet />
       <Footer />
-      <CarouselCard />
     </>
   );
 }
+
 function App() {
-  const joinButtonProps = {
-    label: "Join the pigsty!",
-    onClick: () => {
-      // Hantera klickhändelsen
-    },
-  };
   const router = createBrowserRouter([
     {
       children: [
@@ -56,6 +54,10 @@ function App() {
             />
           ),
           path: "/login",
+        },
+        {
+          element: <AboutPage />,
+          path: "/about",
         },
       ],
       element: <Root />,

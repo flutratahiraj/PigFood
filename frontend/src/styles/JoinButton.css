@@ -1,7 +1,7 @@
 .btn.btn-join {
-  width: 161px;
+  width: 161px !important;
   height: 50px;
-  background-color: #f7f800;
+  background-color: #f7f800 !important;
   border: none;
   border-radius: 6px;
   padding: 16px 22px;
@@ -11,7 +11,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 18px;
-  color: #094ec7;
+  color: #094ec7 !important;
   transition: color 0.3s, background 0.3s;
   text-decoration: none;
 }

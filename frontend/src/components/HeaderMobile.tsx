@@ -3,14 +3,9 @@ import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { slide as Menu } from "react-burger-menu";
 import JoinButton from "./buttons/JoinButton";
-import FavIcons from "./FavIcons";
+// import FavIcons from "./FavIcons";
 import "../styles/ArrowLink.css";
 import "../styles/HeaderMobile.css";
-//
-// import logo from "icon-0.svg";
-// import HamburgerIcon from "./HamburgerIcon";
-// import "../css/HeaderLogo.css";
-// import { Container, Row, Col } from "react-bootstrap";
 
 interface HeaderMobileProps {
   joinButtonProps: {
@@ -193,9 +188,7 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
       </div>
 
       <JoinButton {...joinButtonProps} />
-      <div className="favvo">
-        <FavIcons />
-      </div>
+      <div className="favvo">{/* <FavIcons /> */}</div>
     </Menu>
   );
 };

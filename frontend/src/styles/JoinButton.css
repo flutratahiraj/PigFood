@@ -1,0 +1,26 @@
+.btn.btn-join {
+  width: 161px;
+  height: 50px;
+  background-color: #f7f800;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 22px;
+  gap: 8px;
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  color: #094ec7;
+  transition: color 0.3s, background 0.3s;
+  text-decoration: none;
+}
+/*.btn-primary*/
+.btn:hover {
+  background-color: blue !important; /* Ändra bakgrundsfärg vid hovring */
+  color: yellow !important; /* Ändra textfärg vid hovring */
+}
+
+/* .btn-hover:hover {
+  background-color: blue;
+} */

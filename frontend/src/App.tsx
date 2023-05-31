@@ -1,27 +1,31 @@
 import React from "react";
 import Footer from "./components/Footer";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import HeaderMobile from "./components/HeaderMobile";
 import "./App.css";
 import LandingPage from "./views/LandingPage";
 import HomePage from "./views/HomePage";
 import DetailPage from "./views/DetailPage";
 import CheckOutPage from "./views/CheckOutPage";
-// import Navbar from "./components/Navbar";
-// import MySignUpForm from "./components/MySignupForm";
+import CarouselCard from "./components/CarouselCard";
+import LogIn from "./components/LogIn";
 
 function Root() {
   return (
-
     <>
-      <HeaderMobile />
       <Outlet />
       <Footer />
+      <CarouselCard />
     </>
   );
 }
 function App() {
+  const joinButtonProps = {
+    label: "Join the pigsty!",
+    onClick: () => {
+      // Hantera klickhändelsen
+    },
+  };
   const router = createBrowserRouter([
     {
       children: [
@@ -38,6 +42,20 @@ function App() {
         {
           element: <CheckOutPage />,
           path: "/checkoutpage",
+        },
+
+        {
+          element: (
+            <LogIn
+              LogInButtonProps={{
+                label: "Log in",
+                onClick: () => {
+                  /* Hantera klickhändelsen */
+                },
+              }}
+            />
+          ),
+          path: "/login",
         },
       ],
       element: <Root />,

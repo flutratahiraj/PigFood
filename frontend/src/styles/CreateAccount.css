@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 60px 70px;
+  gap: 60px;
+  isolation: isolate;
+  position: relative;
+  width: 906px;
+  height: 1024px;
+}
+
+h1 {
+  font-family: "Panchang";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 69px;
+  /* leading-trim: both;
+  text-edge: cap; */
+  letter-spacing: 0.05em;
+  color: #f7f800;
+}
+
+.field-label {
+  width: 83px;
+  height: 22px;
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #f7f800;
+}
+
+.input-field {
+  width: 743px;
+  height: 0px;
+  border: 2px solid #f7f800;
+}
+
+.error-message {
+  color: red;
+}
+
+.submit-button {
+  background-color: yellow;
+  /* Add any additional styling you need for the submit button */
+}

@@ -1,25 +1,17 @@
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { slide as Menu } from "react-burger-menu";
-import JoinButton from "./buttons/JoinButton";
-import FavIcons from "./FavIcons";
 import "../styles/ArrowLink.css";
 import "../styles/HeaderMobile.css";
-//
-// import logo from "icon-0.svg";
-// import HamburgerIcon from "./HamburgerIcon";
-// import "../css/HeaderLogo.css";
-// import { Container, Row, Col } from "react-bootstrap";
+import FavIcons from "./FavIcons";
+// interface HeaderMobileProps {
+//   joinButtonProps: {
+//     label: string;
+//     onClick: () => void;
+//   };
+// }
 
-interface HeaderMobileProps {
-  joinButtonProps: {
-    label: string;
-    onClick: () => void;
-  };
-}
-
-const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
+const HMLoggedIn = () => {
   const [isOpen, setOpen] = useState(false);
 
   const handleIsOpen = () => {
@@ -58,7 +50,7 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
         isolation: "isolation",
         position: "relative",
         width: "358px",
-        minHeight: "851px",
+        height: "851px",
         background: "#212121",
         justifyContent: "spaceAround",
       },
@@ -137,7 +129,7 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
           to="/login"
           style={memoizedStyles.bmItem}
         >
-          Login
+          My Account
         </NavLink>
         <div className="arrow-icon">
           <div id="arrow-container">
@@ -159,7 +151,7 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
           to="/about"
           style={memoizedStyles.bmItem}
         >
-          About
+          Wallet
         </NavLink>
         <div id="arrow-container">
           <img
@@ -190,14 +182,30 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
             // style={memoizedStyles.bmItem}
           />
         </div>
-      </div>
-
-      <JoinButton {...joinButtonProps} />
-      <div className="favvo">
-        <FavIcons />
+        <div className="bm-item-list" style={memoizedStyles.bmItemList}>
+          <NavLink
+            id="login"
+            className="bm-item"
+            onClick={closeSideBar}
+            to="/"
+            style={memoizedStyles.bmItem}
+          >
+            Log out
+          </NavLink>
+          <div id="arrow-container">
+            <img
+              id="arrow-login"
+              src="/ArrowLink.svg"
+              alt="Arrow"
+              className="arrow-contact"
+              // style={memoizedStyles.bmItem}
+            />
+          </div>
+          <FavIcons />
+        </div>
       </div>
     </Menu>
   );
 };
 
-export default HeaderMobile;
+export default HMLoggedIn;

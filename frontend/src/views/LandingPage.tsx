@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/LandingPage.css";
+import HeaderMobile from "../components/HeaderMobile";
 
 const LandingPage: React.FC = () => {
   const faqItems = [
@@ -21,7 +22,6 @@ const LandingPage: React.FC = () => {
 
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(-1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-
   const toggleAnswer = (index: number) => {
     if (index === activeQuestionIndex) {
       setActiveQuestionIndex(-1);
@@ -34,7 +34,6 @@ const LandingPage: React.FC = () => {
     const interval = setInterval(() => {
       setActiveImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
-
     return () => {
       clearInterval(interval);
     };
@@ -44,47 +43,33 @@ const LandingPage: React.FC = () => {
     <>
       <div className="container">
         <div className="Landing">
-          <img src="Big-picture.jpg"></img>
-          <div className="Text">
-            <h1>
-              {" "}
-              We are <br></br>Pig Food
-            </h1>
-            <p>
-              Be a pig and eat tasty crap that otherwise goes<br></br> to the
-              bin. Pig food offers you quality food from<br></br>top notch
-              resturants for a minimal amount of<br></br> pig bucks
-            </p>
+          {/* <HeaderLanding /> */}
+          <HeaderMobile
+            joinButtonProps={{
+              label: "Join the pigsty!",
+              onClick: () => {
+                {
+                  /* /* handle onClick */
+                }
+              },
+            }}
+          />
+          <div className="background-image">
+            <img src="Big-picture.jpg" alt="Background" />
+            <div className="overlay">
+              <h1 className="pig-food-title">
+                We are <br /> Pig Food
+              </h1>
+              <p className="be-a-pig-text">
+                Be a pig and eat tasty crap that otherwise goes to the bin. Pig
+                food offers you quality food from top-notch restaurants for a
+                minimal amount of pig bucks
+              </p>
+            </div>
           </div>
         </div>
-
         <h1 className="faq-title">FAQ</h1>
-        <div id="faq" className="faq-section">
-          {faqItems.map((item, index) => (
-            <div key={index}>
-              <div
-                className={`question ${
-                  index === activeQuestionIndex ? "active" : ""
-                }`}
-                onClick={() => toggleAnswer(index)}
-              >
-                {item.question}
-                <div className="arrow-icon" />
-              </div>
-              <div
-                className={`answer ${
-                  index === activeQuestionIndex ? "show" : ""
-                }`}
-              >
-                {item.answer}
-              </div>
-            </div>
-          ))}
-        </div>
-        <h1 className="Food-h1">
-          Think of all <br></br> the food you<br></br> can save!
-        </h1>
-        <button>Join the pigsty!</button>
+        /*{" "}
         <div className="carousel">
           {images.map((image, index) => (
             <img
@@ -96,19 +81,9 @@ const LandingPage: React.FC = () => {
           ))}
         </div>
       </div>
-      <h1 className="Food-h1">Think of all <br></br> the food you<br></br> can save!</h1>
-      <button>Join the pigsty!</button>
-      <div className="carousel">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image ${index + 1}`}
-            className="carousel-image"
-          />
-        ))}
-      </div>
-
+      <h1 className="Food-h1">
+        Think of all <br></br> the food you<br></br> can save!
+      </h1>
     </>
   );
 };

@@ -24,6 +24,7 @@ function Root() {
     </>
   );
 }
+
 function App() {
   const router = createBrowserRouter([
     {

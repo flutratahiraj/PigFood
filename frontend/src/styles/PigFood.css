@@ -1,0 +1,76 @@
+.Landing {
+    position: relative;
+    margin-bottom:-25px;
+  }
+
+  .Landing img {
+    width: 100%;
+    height: auto;
+  }
+
+  .Landing .Text {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: left;
+    padding-left: 20px;
+    z-index: 1;
+    margin-top:180px;
+  }
+
+  .Landing h1 {
+    font-size: 50px;
+    color: #FFE3F0;
+    font-family: 'Panchang', sans-serif;
+  }
+
+  .Landing p {
+    font-size: 18px;
+    color: #FFE3F0;
+    font-family: 'Clash Grotesk', sans-serif;
+
+  }
+
+  .Landing .Text h3 {
+    margin-top: 50px;
+  }
+
+.Landing h3{
+    color: #FFE3F0;
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight:500;
+    margin-bottom:15px;
+}
+
+.Landing button{
+border-radius:5px;
+}
+
+.LogoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 0; /* Adjusted to remove the gap */
+}
+
+  .Logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .Logo img {
+    width: 91px;
+    height: 91px;
+  }
+
+  .Logo p {
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: center;
+    font-family: 'Panchang', sans-serif;
+    font-weight:bold;
+  }

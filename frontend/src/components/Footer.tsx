@@ -1,12 +1,13 @@
 import React from 'react';
 import "../styles/Footer.css"
 
+
 const Footer: React.FC = () => {
   return (
     <footer>
       <h2>Pigsty</h2>
     <nav>
-      <a href="">Log in </a>
+      <a href="">Log in  </a>
       <a href="">Create account</a>
       <a href="">About Pig Food</a>
       <a href="">Get Help</a>

@@ -26,6 +26,10 @@
     margin: 0;
   }
 
+  .Benefit-img{
+    width:100%;
+  }
+
   .Benefit li {
     margin-bottom: 10px;
     font-size: 14px;

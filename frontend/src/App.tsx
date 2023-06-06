@@ -1,23 +1,19 @@
 import React from "react";
 import Footer from "./components/Footer";
-// import logo from "./logo.svg";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import HeaderMobile from "./components/HeaderMobile";
 import "./App.css";
 import LandingPage from "./views/LandingPage";
 import HomePage from "./views/HomePage";
 import DetailPage from "./views/DetailPage";
 import CheckOutPage from "./views/CheckOutPage";
+import LogIn from "./components/LogIn";
 import ScrollToTopArrow from "./components/ScrollToTopArrow";
 import AboutPage from "./views/AboutPage";
-// import Navbar from "./components/Navbar";
-// import MySignUpForm from "./components/MySignupForm";
+import CreateAccount from "./components/CreateAccount";
 
 function Root() {
   return (
-
     <>
-      <HeaderMobile />
       <ScrollToTopArrow />
       <Outlet />
       <Footer />
@@ -30,7 +26,16 @@ function App() {
     {
       children: [
         {
-          element: <LandingPage />,
+          element: (
+            <LandingPage
+            // BecomeButtonProps={{
+            //   label: "Become a Pig!",
+            //   onClick: () => {
+            /* Hantera klickhändelsen */
+            //   },
+            // }}
+            />
+          ),
           path: "/",
         },
         { element: <HomePage />, path: "/homepage" },
@@ -42,6 +47,28 @@ function App() {
         {
           element: <CheckOutPage />,
           path: "/checkoutpage",
+        },
+        {
+          element: <CreateAccount />,
+          path: "/createaccount",
+        },
+        //   // {
+        //   element: (
+        //     <CreateAccount
+        //       BecomeAPigProps={{
+        //         label: "Become a Pig!",
+        //         onClick: () => {
+        //           /* Hantera klickhändelsen */
+        //         },
+        //       }}
+        //     />
+        //   ),
+        //   path: "/login",
+        // },
+
+        {
+          element: <LogIn />,
+          path: "/login",
         },
         {
           element: <AboutPage />,

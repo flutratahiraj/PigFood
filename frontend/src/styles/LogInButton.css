@@ -1,0 +1,35 @@
+.btn.btn-login {
+  width: 161px;
+  height: 50px;
+  border-radius: 6px;
+  padding: 16px 22px;
+  gap: 8px;
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  color: #f7f800 !important;
+  transition: color 0.3s, background 0.3s;
+  text-decoration: none;
+}
+/*.btn-primary*/
+.btn:hover {
+  background-color: #f7f800 !important;
+  color: #094ec7 !important;
+}
+
+button.btn.btn-login {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 40px;
+  padding: 16px 24px;
+  gap: 8px;
+  width: 94px;
+  height: 50px;
+  background: #094ec7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  text-decoration: none;
+}

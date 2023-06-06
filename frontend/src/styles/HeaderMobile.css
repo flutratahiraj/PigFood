@@ -1,0 +1,161 @@
+.arrow-login {
+  padding-left: 102px;
+}
+.arrow-about {
+  padding-left: 94px;
+}
+
+.arrow-contact {
+  padding-left: 76px;
+}
+
+/* .favvo {
+  padding-right: 20px;
+} */
+/* .bmBurgerButton {
+  position: fixed;
+  width: 26px;
+  height: 20px;
+  right: 36px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.bmBurgerBars {
+  background: #333;
+}
+
+.bmMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 156px 40px;
+  gap: 25px;
+  isolation: isolation;
+  position: relative;
+  width: 358px;
+  height: 851px;
+  background: #212121;
+} */
+
+/* .bmItemList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+} */
+
+/* .bmItem {
+  width: 61px;
+  height: 30px;
+  font-family: Clash Grotesk;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #f7f800;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+} */
+
+/* .bmCrossButton {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 36px;
+  top: 20px;
+  justify-self: end;
+} */
+
+/* .menu-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+} */
+
+#arrow-container {
+  /* display: block;
+  align-items: start;
+  padding-top: 5px; */
+}
+
+#arrow-login {
+  /* display: flex;
+  justify-content: start;
+  line-height: 30px; */
+
+  /* padding-left: 222px; */
+  /* padding-right: 40px; */
+
+  /* align-items: stretch; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: end; */
+
+  /* width: 10px;
+  height: 10px; */
+}
+
+/* .menu-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+} */
+/* .HeaderMobile {
+  position: absolute;
+  top: 30px;
+  right: 36px;
+  z-index: 1;
+}
+
+.HeaderMobile .bm-burger-button {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.HeaderMobile .bm-burger-bars {
+  background-color: #ffffff;
+}
+
+.HeaderMobile .bm-cross-button {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.HeaderMobile .bm-cross {
+  background-color: #ffffff;
+}
+
+.HeaderMobile .bm-menu {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.HeaderMobile .bm-menu .menu-item {
+  color: #ffffff;
+}
+
+.HeaderMobile .bm-menu .menu-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.HeaderMobile .bm-menu .menu-item .arrow-container {
+  opacity: 0.5;
+}
+
+.HeaderMobile .bm-menu .menu-item.active {
+  color: #f7f800;
+}
+
+.HeaderMobile .bm-menu .menu-item.active .arrow-container {
+  opacity: 1;
+} */

@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { slide as Menu } from "react-burger-menu";
+import JoinButton from "./buttons/JoinButton";
+// import FavIcons from "./FavIcons";
 import "../styles/ArrowLink.css";
-// import HamburgerIcon from "./HamburgerIcon";
-// import '../css/HeaderLogo.css'
-// import { Container, Row, Col } from "react-bootstrap";
+import "../styles/HeaderMobile.css";
 
 const HeaderMobile = () => {
   const [isOpen, setOpen] = useState(false);
@@ -19,56 +19,89 @@ const HeaderMobile = () => {
 
   const memoizedStyles = useMemo(
     () => ({
+      //position och storlek på burgerknappen
       bmBurgerButton: {
-        position: "fixed",
+        position: "absolute",
         width: "26px",
         height: "20px",
         right: "36px",
         top: "30px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
+        // display: "flex",
+        // flexDirection: "column",
+        // justifyContent: "flex-start",
       },
+      //färgen och formen på strecken för burgerikon.??
       bmBurgerBars: {
         background: "#333",
       },
+      //Allmänna stilar för sidofältet, inklusive bakgrundsfärg, padding och fontstorlek.
       bmMenu: {
         display: "flex",
+        flexWrap: "wrap",
         flexDirection: "column",
         alignItems: "flex-start",
         padding: "156px 40px",
         gap: "25px",
         isolation: "isolation",
         position: "relative",
-        width: "324px",
-        height: "851px",
+        width: "358px",
+        minHeight: "851px",
         background: "#212121",
+        justifyContent: "spaceAround",
       },
+      // container för alternativlistan
       bmItemList: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-      },
-      bmItem: {
         width: "61px",
         height: "30px",
+        display: "flex",
+        // justifyContent: "spaceAround",
+        // flexDirection: "column",
+        // alignItems: "flex-start",
+        gap: "25px",
+        alignItems: "baseline",
+      },
+      //enskilda element i containern
+      bmItem: {
+        flex: "50%",
+        // width: "61px",
+        // height: "30px",
+        justifyContent: "start",
         fontFamily: "Clash Grotesk",
         fontStyle: "normal",
         fontSize: "24px",
         lineHeight: "30px",
+        // marginRight: "100px",
         color: "#F7F800",
-        flex: "none",
-        order: "0",
-        flexGrow: "0",
+
+        // flex: "none",
+        // order: "0",
+        // flexGrow: "0",
       },
+      //Styr position och storlek på klickbar kryssknapp.i detta fall "köttdelen"
       bmCrossButton: {
         height: "24px",
         width: "24px",
         position: "absolute",
-        right: "36px",
-        top: "20px",
+        right: "54px",
+        top: "30px",
         justifySelf: "end",
       },
+      bmItemLogo: {
+        // display: "flex",
+        // alignItems: "center",
+        // marginBottom: "20px",
+      },
+      bmLogoImg: {
+        // marginRight: "10px",
+      },
+      bmItemContainer: {
+        // display: "flex",
+        // // flexDirection: "",
+        // alignItems: "flex-start",
+        // gap: "25px",
+      },
+
+      // arrowIcon: { width: "10px", height: "10px", paddingLeft: "20px" },
     }),
     []
   );
@@ -83,42 +116,71 @@ const HeaderMobile = () => {
       onClose={handleIsOpen}
       styles={memoizedStyles}
     >
-      <NavLink id="login" className="menu-item" onClick={closeSideBar} to="/">
-        <div className="menu-item-container">
+      <div className="bm-item-list" style={memoizedStyles.bmItemList}>
+        <NavLink
+          id="login"
+          className="bm-item"
+          onClick={closeSideBar}
+          to="/login"
+          style={memoizedStyles.bmItem}
+        >
           Login
-          <div className="arrow-container">
-            <img src="/ArrowLink.svg" alt="Arrow" className="arrow-icon" />
+        </NavLink>
+        <div className="arrow-icon">
+          <div id="arrow-container">
+            <img
+              id="arrow-login"
+              src="/ArrowLink.svg"
+              alt="Arrow"
+              className="arrow-login"
+              // style={memoizedStyles.bmItem}
+            />
           </div>
         </div>
-      </NavLink>
-
-      <NavLink
-        id="about"
-        className="menu-item"
-        to="/about"
-        onClick={closeSideBar}
-      >
-        <div className="menu-item-container">
+      </div>
+      <div className="bm-item-list" style={memoizedStyles.bmItemList}>
+        <NavLink
+          id="login"
+          className="bm-item"
+          onClick={closeSideBar}
+          to="/about"
+          style={memoizedStyles.bmItem}
+        >
           About
-          <div className="arrow-container">
-            <img src="/ArrowLink.svg" alt="Arrow" className="arrow-icon" />
-          </div>
+        </NavLink>
+        <div id="arrow-container">
+          <img
+            id="arrow-login"
+            src="/ArrowLink.svg"
+            alt="Arrow"
+            className="arrow-about"
+            // style={memoizedStyles.bmItem}
+          />
         </div>
-      </NavLink>
-
-      <NavLink
-        id="contact"
-        className="menu-item"
-        onClick={closeSideBar}
-        to="/contact"
-      >
-        <div className="menu-item-container">
+      </div>
+      <div className="bm-item-list" style={memoizedStyles.bmItemList}>
+        <NavLink
+          id="login"
+          className="bm-item"
+          onClick={closeSideBar}
+          to="/"
+          style={memoizedStyles.bmItem}
+        >
           Contact
-          <div className="arrow-container">
-            <img src="/ArrowLink.svg" alt="Arrow" className="arrow-icon" />
-          </div>
+        </NavLink>
+        <div id="arrow-container">
+          <img
+            id="arrow-login"
+            src="/ArrowLink.svg"
+            alt="Arrow"
+            className="arrow-contact"
+            // style={memoizedStyles.bmItem}
+          />
         </div>
-      </NavLink>
+      </div>
+
+      <JoinButton />
+      <div className="favvo">{/* <FavIcons /> */}</div>
     </Menu>
   );
 };

@@ -1,50 +1,72 @@
 .Landing {
-    position: relative;
-    margin-bottom:-25px;
-  }
-
-  .Landing img {
-    width: 100%;
-    height: auto;
-  }
-
-  .Landing .Text {
-    position: absolute;
-    top: 30%;
-    left: 0;
-    transform: translateY(-50%);
-    text-align: left;
-    padding-left: 20px;
-    z-index: 1;
-    margin-top:180px;
-  }
-
-  .Landing h1 {
-    font-size: 50px;
-    color: #FFE3F0;
-    font-family: 'Panchang', sans-serif;
-  }
-
-  .Landing p {
-    font-size: 18px;
-    color: #FFE3F0;
-    font-family: 'Clash Grotesk', sans-serif;
-
-  }
-
-  .Landing .Text h3 {
-    margin-top: 50px;
-  }
-
-.Landing h3{
-    color: #FFE3F0;
-    font-family: 'Clash Grotesk', sans-serif;
-    font-weight:500;
-    margin-bottom:15px;
+  position: relative;
+  margin-bottom: -25px;
 }
 
-.Landing button{
-border-radius:5px;
+.Landing img {
+  width: 100%;
+  height: auto;
+}
+
+.Landing .Text {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  padding-left: 20px;
+  z-index: 1;
+  margin-top: 180px;
+}
+
+/* .Landing  Klara utkommenterat*/
+h1.pig-food {
+  font-family: "Panchang", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 60px;
+  color: #ffe3f0;
+
+  /* Klara kommenterat: font-size: 50px;
+  color: #ffe3f0;
+  font-family: "Panchang", sans-serif; */
+}
+
+/* .Landing KLara har lagt till css  */
+.Landing p {
+  font-family: "Clash Grotesk", sans-serif;
+  font-style: normal;
+  line-height: 22px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffe3f0;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+p.text-header {
+  font-family: "Clash Grotesk", sans-serif;
+  font-style: normal;
+  line-height: 22px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffe3f0;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.Landing .Text h3 {
+  margin-top: 50px;
+}
+
+.Landing h3 {
+  color: #ffe3f0;
+  font-family: "Clash Grotesk", sans-serif;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.Landing button {
+  border-radius: 5px;
 }
 
 .LogoContainer {
@@ -53,24 +75,40 @@ border-radius:5px;
   justify-content: center;
   padding: 0;
   margin-bottom: 0; /* Adjusted to remove the gap */
+  padding-top: 100px; /*Klara*/
 }
 
-  .Logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  }
+.Logo img {
+  width: 91px;
+  height: 91px;
+}
 
-  .Logo img {
-    width: 91px;
-    height: 91px;
-  }
+.Logo p {
+  font-size: 16px;
+  margin-top: 5px;
+  text-align: center;
+  font-family: "Panchang", sans-serif;
+  font-weight: bold;
+}
 
-  .Logo p {
-    font-size: 16px;
-    margin-top: 5px;
-    text-align: center;
-    font-family: 'Panchang', sans-serif;
-    font-weight:bold;
-  }
+.text-become {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  font-size: 16px;
+}
+/* .big-bowl-container {
+} */
+
+/* img.bowl.noodles {
+  position: absolute;
+  left: 1.57%;
+  right: 0%;
+  top: 69.75%;
+  bottom: 0.06%;
+} */

@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS accounts;
+CREATE TABLE accounts (email TEXT UNIQUE NOT NULL, password TEXT NOT NULL CHECK(length(password)>=6),created TEXT NOT NULL DEFAULT CURRENT_DATE);
+
+INSERT INTO accounts (email, password) VALUES ('admin', 'secret');
+INSERT INTO accounts (email, password) VALUES ('flutra', 'secret2');

@@ -1,4 +1,3 @@
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { slide as Menu } from "react-burger-menu";
@@ -7,14 +6,7 @@ import JoinButton from "./buttons/JoinButton";
 import "../styles/ArrowLink.css";
 import "../styles/HeaderMobile.css";
 
-interface HeaderMobileProps {
-  joinButtonProps: {
-    label: string;
-    onClick: () => void;
-  };
-}
-
-const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
+const HeaderMobile = () => {
   const [isOpen, setOpen] = useState(false);
 
   const handleIsOpen = () => {
@@ -29,7 +21,7 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
     () => ({
       //position och storlek på burgerknappen
       bmBurgerButton: {
-        position: "fixed",
+        position: "absolute",
         width: "26px",
         height: "20px",
         right: "36px",
@@ -90,8 +82,8 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
         height: "24px",
         width: "24px",
         position: "absolute",
-        right: "36px",
-        top: "20px",
+        right: "54px",
+        top: "30px",
         justifySelf: "end",
       },
       bmItemLogo: {
@@ -187,7 +179,7 @@ const HeaderMobile = ({ joinButtonProps }: HeaderMobileProps) => {
         </div>
       </div>
 
-      <JoinButton {...joinButtonProps} />
+      <JoinButton />
       <div className="favvo">{/* <FavIcons /> */}</div>
     </Menu>
   );

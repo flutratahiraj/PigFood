@@ -8,14 +8,7 @@ const HeaderLanding = () => {
   return (
     // <div className="container">
     <div className="background-food">
-      <HeaderMobile
-        joinButtonProps={{
-          label: "Join the pigsty!",
-          onClick: () => {
-            /* handle onClick */
-          },
-        }}
-      />
+      <HeaderMobile />
       <div className="background-food">
         <img src="Big-picture.jpg" alt="Background" />
         <div className="overlay">
@@ -29,13 +22,7 @@ const HeaderLanding = () => {
           </p>
         </div>
       </div>
-      <BecomeAPigButton
-        // className="become-a-button"
-        label="Become a pig!"
-        onClick={() => {
-          // Hantera onClick-händelsen
-        }}
-      />
+      <BecomeAPigButton />
     </div>
     // </div>
   );

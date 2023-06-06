@@ -1,11 +1,13 @@
 .Navbar-container {
-    padding: 20px;
-    position: absolute;
-    z-index:2;
-  }
+  padding: 20px;
+  position: absolute;
+  z-index: 2;
+}
 
-  .navbar-logo {
-    width: 50px;
-    height: 30px;
-    box-sizing: border-box;
-  }
+.navbar-logo {
+  width: 50px;
+  height: 30px;
+  box-sizing: border-box;
+  margin-top: 8px; /*Klara*/
+  margin-left: 12px;
+}

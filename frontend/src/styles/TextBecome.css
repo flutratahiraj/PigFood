@@ -1,0 +1,14 @@
+.three-rows-container {
+  width: 184px;
+  height: 60px;
+  padding-left: 13.5px;
+}
+
+.row {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffe3f0;
+}

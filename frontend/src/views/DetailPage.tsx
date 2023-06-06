@@ -1,7 +1,7 @@
 function DetailPage() {
   return (
     <div>
-      <h1>DetailPage</h1>
+      <DetailPage />
     </div>
   );
 }

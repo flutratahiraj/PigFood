@@ -1,0 +1,69 @@
+/*min kod*/
+.background-food {
+  position: absolute;
+  width: 393px;
+  height: 851px;
+  left: 0px;
+  top: 0px;
+  /* position: relative;
+  display: inline-block; */
+}
+
+.background-food img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 0px 0px;
+  gap: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-align: left;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Justera genomsynligheten efter behov */
+}
+
+.we-are-title {
+  /* width: 363px;
+  height: 85px; */
+  font-family: "Panchang", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #ffe3f0;
+  font-size: 52px;
+  line-height: 69px;
+  letter-spacing: 0.05em;
+  padding-top: 119px;
+  padding-left: 13.5px;
+}
+
+.header-text {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffe3f0;
+  /* padding-top: 10px; */
+  padding-left: 13.5px;
+}
+.become-a-button {
+  position: absolute;
+  top: calc(50% + 60px); /* Justera vertikal position här */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}

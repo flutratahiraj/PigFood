@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 
-//från handou: "publicering via Heroku"
+//från handout: "publicering via Heroku"
 import path from "path";
 
 import dotenv from "dotenv";

@@ -1,6 +1,5 @@
 import React from "react";
 import Footer from "./components/Footer";
-// import logo from "./logo.svg";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./views/LandingPage";
@@ -10,8 +9,7 @@ import CheckOutPage from "./views/CheckOutPage";
 import LogIn from "./components/LogIn";
 import ScrollToTopArrow from "./components/ScrollToTopArrow";
 import AboutPage from "./views/AboutPage";
-// import Navbar from "./components/Navbar";
-// import MySignUpForm from "./components/MySignupForm";
+import CreateAccount from "./components/CreateAccount";
 
 function Root() {
   return (
@@ -28,7 +26,16 @@ function App() {
     {
       children: [
         {
-          element: <LandingPage />,
+          element: (
+            <LandingPage
+            // BecomeButtonProps={{
+            //   label: "Become a Pig!",
+            //   onClick: () => {
+            /* Hantera klickhändelsen */
+            //   },
+            // }}
+            />
+          ),
           path: "/",
         },
         { element: <HomePage />, path: "/homepage" },
@@ -41,18 +48,26 @@ function App() {
           element: <CheckOutPage />,
           path: "/checkoutpage",
         },
+        {
+          element: <CreateAccount />,
+          path: "/createaccount",
+        },
+        //   // {
+        //   element: (
+        //     <CreateAccount
+        //       BecomeAPigProps={{
+        //         label: "Become a Pig!",
+        //         onClick: () => {
+        //           /* Hantera klickhändelsen */
+        //         },
+        //       }}
+        //     />
+        //   ),
+        //   path: "/login",
+        // },
 
         {
-          element: (
-            <LogIn
-              LogInButtonProps={{
-                label: "Log in",
-                onClick: () => {
-                  /* Hantera klickhändelsen */
-                },
-              }}
-            />
-          ),
+          element: <LogIn />,
           path: "/login",
         },
         {

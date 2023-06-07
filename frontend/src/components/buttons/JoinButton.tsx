@@ -1,21 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import "../../styles/JoinButton.css";
 
-interface JoinButtonProps {
-  label: string;
-  onClick: () => void;
-}
+function JoinButton() {
+  const navigate = useNavigate();
 
-function JoinButton({ label, onClick }: JoinButtonProps) {
   return (
     <div className="hover">
-      <Link to="/mysignupform">
-        <Button variant="join" onClick={onClick}>
-          {label}
-        </Button>
-      </Link>
+      <Button onClick={() => navigate("/createaccount")} variant="join">
+        Join the pigsty!
+      </Button>
     </div>
   );
 }

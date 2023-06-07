@@ -1,49 +1,112 @@
-.container {
+/* Klara egen design för mob utifrån deras desktop variant */
+form.create-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 60px 70px;
-  gap: 60px;
-  isolation: isolate;
   position: relative;
-  width: 906px;
-  height: 1024px;
+  width: 390px;
+  height: 844px;
+  background-color: #094ec7;
+  padding: 10px;
 }
 
-h1 {
+h1.create-header {
   font-family: "Panchang";
   font-style: normal;
   font-weight: 700;
-  font-size: 52px;
+  font-size: 30px;
   line-height: 69px;
-  /* leading-trim: both;
-  text-edge: cap; */
   letter-spacing: 0.05em;
   color: #f7f800;
 }
 
-.field-label {
-  width: 83px;
-  height: 22px;
+.create-interaction {
+  padding-left: 20px;
+}
+label.create-label {
   font-family: "Clash Grotesk";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 16px;
+  padding-top: 20px;
   color: #f7f800;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 360px;
 }
 
-.input-field {
-  width: 743px;
-  height: 0px;
-  border: 2px solid #f7f800;
+#firstName,
+#lastName,
+#username,
+#password,
+#dateOfBirth,
+#phoneNumber {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+  border-bottom: 2px solid #f7f800;
+  width: 90%;
+  margin: 0 auto;
+  color: #ffe3f0;
+  background-color: #094ec7;
 }
 
 .error-message {
   color: red;
 }
-
+/*
 .submit-button {
   background-color: yellow;
-  /* Add any additional styling you need for the submit button */
+} */
+.create-checkbox-container {
+  padding-top: 20px;
 }
+div.create-checkbox-container {
+  padding-bottom: 30px;
+}
+p.create-checkbox {
+  color: #ffffff;
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 10px;
+}
+
+p.create-to-login {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffe3f0;
+  padding-left: 30px;
+  padding-top: 70px;
+}
+/* .input {
+  width: 743px;
+  height: 0px;
+  border-bottom: 2px solid #f7f800;
+} */
+/* .create-Field {
+  font-size: 18px;
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 5px;
+
+width: 743px;
+height: 58px;
+} */
+
+/* .create-field::placeholder {
+  font-family: "Clash Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+} */

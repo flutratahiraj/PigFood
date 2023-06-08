@@ -15,7 +15,7 @@ app.use(express.json());
 app.use("/api", accountRouter);
 dotenv.config();
 
-const client = new Client({
+export const client = new Client({
   database: process.env.PGDATABASE,
   password: process.env.PGPASSWORD,
   port: process.env.PGPORT as number | undefined,

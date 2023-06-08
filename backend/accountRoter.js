@@ -36,7 +36,7 @@ accountRouter.post("/createaccount", (req, res) => {
     const { firstName, secondName, userName, passWord } = req.body;
     conection_1.default.query(
     //INSERT-fråga utförs mot databasen för att lägga till användaruppgifterna i databasen.
-    "INSERT INTO piguser(username, password, firstname, secondname) VALUES ($1, $2, $3, $4)", [userName, passWord, firstName, secondName], (error, result) => {
+    "INSERT INTO piguser(username, password, firstname, secondname) VALUES ($1, $2, $3, $4)", [userName, passWord, firstName, secondName], (error) => {
         if (error) {
             console.error("Error creating account:", error);
             res.status(500).json({ message: "Error creating account" });

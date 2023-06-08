@@ -6,7 +6,7 @@ import path from "path";
 
 import dotenv from "dotenv";
 import { Client } from "pg";
-import LocalClient from "./conection";
+// import LocalClient from "./conection";
 import accountRouter from "./accountRoter";
 const app = express();
 
@@ -23,7 +23,7 @@ const client = new Client({
 });
 
 //min lokala anslutning
-LocalClient.connect();
+// LocalClient.connect();
 //från handou: "publicering via Heroku"
 //varför är det "UNDERSCORE_request"
 app.get("/api", (_request, response) => {

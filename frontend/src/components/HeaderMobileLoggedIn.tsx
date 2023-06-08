@@ -1,15 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { slide as Menu } from "react-burger-menu";
+import FavIcons from "./FavIcons";
 import "../styles/ArrowLink.css";
 import "../styles/HeaderMobile.css";
-import FavIcons from "./FavIcons";
-// interface HeaderMobileProps {
-//   joinButtonProps: {
-//     label: string;
-//     onClick: () => void;
-//   };
-// }
 
 const HMLoggedIn = () => {
   const [isOpen, setOpen] = useState(false);
@@ -26,7 +20,7 @@ const HMLoggedIn = () => {
     () => ({
       //position och storlek på burgerknappen
       bmBurgerButton: {
-        position: "fixed",
+        position: "absolute",
         width: "26px",
         height: "20px",
         right: "36px",
@@ -50,7 +44,7 @@ const HMLoggedIn = () => {
         isolation: "isolation",
         position: "relative",
         width: "358px",
-        height: "851px",
+        minHeight: "851px",
         background: "#212121",
         justifyContent: "spaceAround",
       },
@@ -87,8 +81,8 @@ const HMLoggedIn = () => {
         height: "24px",
         width: "24px",
         position: "absolute",
-        right: "36px",
-        top: "20px",
+        right: "54px",
+        top: "30px",
         justifySelf: "end",
       },
       bmItemLogo: {
@@ -129,7 +123,7 @@ const HMLoggedIn = () => {
           to="/login"
           style={memoizedStyles.bmItem}
         >
-          My Account
+          Piggy
         </NavLink>
         <div className="arrow-icon">
           <div id="arrow-container">
@@ -182,30 +176,18 @@ const HMLoggedIn = () => {
             // style={memoizedStyles.bmItem}
           />
         </div>
-        <div className="bm-item-list" style={memoizedStyles.bmItemList}>
-          <NavLink
-            id="login"
-            className="bm-item"
-            onClick={closeSideBar}
-            to="/"
-            style={memoizedStyles.bmItem}
-          >
-            Log out
-          </NavLink>
-          <div id="arrow-container">
-            <img
-              id="arrow-login"
-              src="/ArrowLink.svg"
-              alt="Arrow"
-              className="arrow-contact"
-              // style={memoizedStyles.bmItem}
-            />
-          </div>
-          <FavIcons />
+      </div>
+
+      <div className="favvo">
+        <FavIcons />
+      </div>
+      <div>
+        {" "}
+        <div className="svg-item">
+          <img src="/TimeLine.svg" alt="timeline" className="svg-icon" />
         </div>
       </div>
     </Menu>
   );
 };
-
 export default HMLoggedIn;

@@ -19,7 +19,6 @@ function Root() {
   const { isLoggedIn } = useAuth();
   return (
     <>
-      {/* {auth} */}
       {isLoggedIn ? <HMLoggedIn /> : <HeaderMobile />}
 
       <ScrollToTopArrow />

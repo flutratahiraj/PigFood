@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { useState, useMemo } from "react";
 import { slide as Menu } from "react-burger-menu";
 import JoinButton from "./buttons/JoinButton";
-// import FavIcons from "./FavIcons";
 import "../styles/ArrowLink.css";
 import "../styles/HeaderMobile.css";
 

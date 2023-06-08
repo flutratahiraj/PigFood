@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 
-//från handout: "publicering via Heroku"
+//från handou: "publicering via Heroku"
 import path from "path";
 
 import dotenv from "dotenv";
@@ -36,7 +36,7 @@ app.use("/images", express.static("images"));
 
 // // Tidigare kod,
 // //men borde nog ingå även via publicering...
-// client.connect();
+client.connect();
 
 // app.get("/cities", (request, response) => {
 //   client.query("SELECT * FROM cities", (error, result) => {

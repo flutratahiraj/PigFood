@@ -1,5 +1,4 @@
 import Feedback from "../components/Feedback";
-// import { useNavigate } from "react-router-dom";
 import PigFood from "../components/PigFood";
 import Faq from "../components/Faq";
 import Benefit from "../components/Benefit";

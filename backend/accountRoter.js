@@ -22,17 +22,15 @@ accountRouter.post("/login", (req, res) => {
         }
         else {
             if (result.rowCount > 0) {
-                // Om inloggningsuppgifterna är korrekta, returnera ett lyckat svar
                 res.status(200).json({ message: "Login successful" });
             }
             else {
-                // Annars returnera ett felmeddelande
                 res.status(401).json({ message: "Invalid username or password" });
             }
         }
     });
 });
-//POST-förfrågan till "/createaccount" endpoint. Koden hanterar skapandet av ett nytt konto.
+//POST-förfrågan till "/createaccount" endpoint. Hanterar skapandet av ett nytt konto.
 accountRouter.post("/createaccount", (req, res) => {
     // Extrahera användaruppgifter från req.body
     const { firstName, secondName, userName, passWord } = req.body;

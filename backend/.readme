@@ -3,3 +3,47 @@ CREATE TABLE accounts (email TEXT UNIQUE NOT NULL, password TEXT NOT NULL CHECK(
 
 INSERT INTO accounts (email, password) VALUES ('admin', 'secret');
 INSERT INTO accounts (email, password) VALUES ('flutra', 'secret2');
+
+//Flutra & Klara
+DROP TABLE IF EXISTS pigUser;
+CREATE TABLE pigUser (
+  pigUser_id SERIAL PRIMARY KEY,
+  firstName VARCHAR NOT NULL,
+  lastName VARCHAR NOT NULL,
+  userName VARCHAR NOT NULL,
+  passWord VARCHAR NOT NULL
+);
+
+DROP TABLE IF EXISTS meal;
+CREATE TABLE meal (
+  meal_id INTEGER PRIMARY KEY,
+  meal TEXT
+);
+
+DROP TABLE IF EXISTS tokens;
+CREATE TABLE tokens (
+pigUser_id INTEGER REFERENCES pigUser(pigUser_id),
+token TEXT UNIQUE NOT NULL
+);
+
+DROP TABLE IF EXISTS extra;
+CREATE TABLE extra (
+  extra_id INTEGER PRIMARY KEY,
+  extra TEXT
+);
+
+//
+DROP TABLE IF EXISTS mealExtra;
+CREATE TABLE mealExtra(
+id INTEGER PRIMARY KEY,
+meal_id INTEGER CHECK(meal_id != extra_id),
+ extrat_id INTEGER CHECK(extra_id != meal_id),
+text TEXT NOT NULL CHECK(length(text) >= 1 ),
+created TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ FOREIGN KEY(meal_id) REFERENCES pigUser(id),
+ FOREIGN KEY(extra_id) REFERENCES pigUser(id)
+ );
+
+
+-- INSERT INTO mealExtra (meal_id, extra_id, INTEGER) VALUES (1, 2);
+-- INSERT INTO mealExtra (meal_id, extra_id, INTEGER) VALUES (2, 1);

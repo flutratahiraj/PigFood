@@ -28,12 +28,13 @@ h1.pig-food {
   line-height: 60px;
   color: #ffe3f0;
 
-  /* Klara kommenterat: font-size: 50px;
+  /* Klara tog bort:
+  font-size: 50px;
   color: #ffe3f0;
   font-family: "Panchang", sans-serif; */
 }
 
-/* .Landing KLara har lagt till css  */
+/* .Landing Klara har lagt till css  */
 .Landing p {
   font-family: "Clash Grotesk", sans-serif;
   font-style: normal;

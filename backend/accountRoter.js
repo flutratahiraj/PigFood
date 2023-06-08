@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //use client instead of pool,
 const express_1 = __importDefault(require("express"));
 const conection_1 = __importDefault(require("./conection"));
-//selecr* retur hittat eller ej om den (tokens) finns det här om success
+//select* retur hittat eller ej om den (tokens) finns det här om success
 // ej skrivit api eftersom det står i index
 const accountRouter = express_1.default.Router();
 //fångar upp en POST-förfrågan till "/login" endpoint, koden hanterar inloggning.
@@ -35,10 +35,10 @@ accountRouter.post("/login", (req, res) => {
 //POST-förfrågan till "/createaccount" endpoint. Koden hanterar skapandet av ett nytt konto.
 accountRouter.post("/createaccount", (req, res) => {
     // Extrahera användaruppgifter från req.body
-    const { firstName, lastName, userName, passWord } = req.body;
+    const { firstName, secondName, userName, passWord } = req.body;
     conection_1.default.query(
     //INSERT-fråga utförs mot databasen för att lägga till användaruppgifterna i databasen.
-    "INSERT INTO piguser(username, password, firstname, lastname) VALUES ($1, $2, $3, $4)", [userName, passWord, firstName, lastName], (error, result) => {
+    "INSERT INTO piguser(username, password, firstname, secondname) VALUES ($1, $2, $3, $4)", [userName, passWord, firstName, secondName], (error, result) => {
         if (error) {
             console.error("Error creating account:", error);
             res.status(500).json({ message: "Error creating account" });

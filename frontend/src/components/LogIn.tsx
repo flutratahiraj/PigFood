@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import LoginButton from "./buttons/LogInButton";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/LogIn.css";
-
+import { useAuth } from "./AuthContext";
 const LogIn = () => {
+  const { toggleLogin } = useAuth();
+  const [loggedIn, setloggedIn] = useState(false);
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
@@ -14,12 +18,24 @@ const LogIn = () => {
     passWord: string;
   }) => {
     try {
-      const response = await axios.post("/api/login", values);
+      const response = await axios.post(
+        "http://localhost:8000/api/login",
+        values
+      );
       const { data } = response;
-
+      console.log(data);
       if (data.message === "Login successful") {
-        console.log("Login successful!");
-        navigate("/homepage");
+        toggleLogin();
+        console.log(toggleLogin());
+        toast.success("Login successful", {
+          autoClose: 500, // Notisen stängs efter 3 sekunder
+        });
+        setloggedIn(!loggedIn);
+        setTimeout(() => {
+          navigate("/homepage");
+        }, 2000); // Fördröjning på 3 sekunder innan omdirigering till homepage
+        // console.log("Login successful!");
+        // navigate("/homepage");
       } else {
         setError("Invalid username or password");
       }
@@ -73,6 +89,24 @@ const LogIn = () => {
             </p>
             {/* type="submit" */}
             <LoginButton />
+            <ToastContainer
+              className="foo"
+              style={{
+                width: "20rem",
+                height: "10rem",
+                fontSize: "1rem",
+                margin: "1.5rem 1rem 3rem 2rem",
+                padding: "1rem",
+                textAlign: "center",
+                lineHeight: "1.5",
+                fontStyle: "italic",
+                fontFamily: "Arial, sans-serif",
+              }}
+              position="bottom-right"
+              hideProgressBar={true}
+              closeOnClick
+              icon={false}
+            />
             {error && <div className="error-message">{error}</div>}
           </form>
         )}
@@ -82,7 +116,6 @@ const LogIn = () => {
 };
 
 export default LogIn;
-
 // import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import Form from "react-bootstrap/Form";

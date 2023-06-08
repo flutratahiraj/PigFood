@@ -5,12 +5,14 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import ConfirmPigButton from "./buttons/ConfirmPigButton";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/CreateAccount.css";
 
 // Valideringsschema med Yup
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required("First name is required"),
-  lastName: Yup.string().required("Last name is required"),
+  secondName: Yup.string().required("Last name is required"),
   userName: Yup.string().required("Username name is required"),
   passWord: Yup.string().required("Password is required"),
   //changed to password, number??
@@ -31,18 +33,18 @@ const CreateAccount = () => {
 
   const HandleAccount = async (values: {
     firstName: string;
-    lastName: string;
+    secondName: string;
     userName: string;
     passWord: string;
   }) => {
-    console.log("test");
+    console.log(values);
     try {
       //sparas i response
       const response = await axios.post(
         "http://localhost:8000/api/createaccount",
         {
           firstName: values.firstName,
-          lastName: values.lastName,
+          secondName: values.secondName,
           userName: values.userName,
           passWord: values.passWord,
         }
@@ -50,8 +52,12 @@ const CreateAccount = () => {
       const { data } = response;
 
       if (data.message === "Account created successfully") {
-        console.log("Account created!");
-        navigate("/homepage");
+        toast.success("Account created successfully", {
+          autoClose: 500, // Notisen stängs efter 3 sekunder
+        });
+        setTimeout(() => {
+          navigate("/homepage");
+        }, 2000); // Fördröjning på 3 sekunder innan omdirigering till homepage
       } else {
         console.error("Error creating account");
       }
@@ -59,6 +65,16 @@ const CreateAccount = () => {
       console.error("An error occurred:", error);
     }
   };
+  //     if (data.message === "Account created successfully") {
+  //       console.log("Account created!");
+  //       navigate("/homepage");
+  //     } else {
+  //       console.error("Error creating account");
+  //     }
+  //   } catch (error) {
+  //     console.error("An error occurred:", error);
+  //   }
+  // };
   //gammal kod
   //   await axios.post("/http://localhost:8000/api", values);
   //   console.log("Account is created!");
@@ -72,7 +88,7 @@ const CreateAccount = () => {
     <Formik
       initialValues={{
         firstName: "",
-        lastName: "",
+        secondName: "",
         userName: "",
         passWord: "",
         dateOfBirth: "",
@@ -107,16 +123,16 @@ const CreateAccount = () => {
               <ErrorMessage name="firstName" component="div" />
             </div>
             <div>
-              <label className="create-label" htmlFor="lastName">
+              <label className="create-label" htmlFor="secondName">
                 Last name
               </label>
               <Field
                 type="text"
                 id="lastName"
-                name="lastName"
+                name="secondName"
                 placeholder="Murphy"
               />
-              <ErrorMessage name="lastName" component="div" />
+              <ErrorMessage name="secondName" component="div" />
             </div>
 
             <div>
@@ -221,6 +237,24 @@ const CreateAccount = () => {
 
               <ConfirmPigButton />
             </div>
+            <ToastContainer
+              className="foo"
+              style={{
+                width: "20rem",
+                height: "10rem",
+                fontSize: "1rem",
+                margin: "1.5rem 1rem 3rem 2rem",
+                padding: "1rem",
+                textAlign: "center",
+                lineHeight: "1.5",
+                fontStyle: "italic",
+                fontFamily: "Arial, sans-serif",
+              }}
+              position="bottom-right"
+              hideProgressBar={true}
+              closeOnClick
+              icon={false}
+            />
             <p className="create-to-login">
               Already have an existing account? Click{" "}
               <a className="creatlogin-link">Here</a>

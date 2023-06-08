@@ -10,10 +10,18 @@ import LogIn from "./components/LogIn";
 import ScrollToTopArrow from "./components/ScrollToTopArrow";
 import AboutPage from "./views/AboutPage";
 import CreateAccount from "./components/CreateAccount";
+import AuthProvider from "./components/AuthContext";
+import HeaderMobile from "./components/HeaderMobile";
+import HMLoggedIn from "./components/HeaderMobileLoggedIn";
+import { useAuth } from "./components/AuthContext";
 
 function Root() {
+  const { isLoggedIn } = useAuth();
   return (
     <>
+      {/* {auth} */}
+      {isLoggedIn ? <HMLoggedIn /> : <HeaderMobile />}
+
       <ScrollToTopArrow />
       <Outlet />
       <Footer />
@@ -52,20 +60,6 @@ function App() {
           element: <CreateAccount />,
           path: "/createaccount",
         },
-        //   // {
-        //   element: (
-        //     <CreateAccount
-        //       BecomeAPigProps={{
-        //         label: "Become a Pig!",
-        //         onClick: () => {
-        //           /* Hantera klickhändelsen */
-        //         },
-        //       }}
-        //     />
-        //   ),
-        //   path: "/login",
-        // },
-
         {
           element: <LogIn />,
           path: "/login",
@@ -79,7 +73,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;

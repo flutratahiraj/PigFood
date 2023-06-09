@@ -26,12 +26,22 @@ const SlideInCartMenu: React.FC<SlideInCartMenuProps> = ({ cardData }) => {
       <div id='slideInCartMenu-container'>
       <div onClick={handleClick}>Test för Add to Cart</div>
       {isOpen && (
+
         <div className="menu-container">
+          <div className="slideInCart-cross-container">
+          <img
+            id="slideInCart-cross"
+            src="CloseDown.svg"
+            style={{width:"30px", height:"20px"}}
+          />
+          </div>
           <img src={cardData.image} alt="Bild" />
+          <div className='inner-container-text'>
           <h3 id='slideInCartMenu-text'>{cardData.title}</h3>
-          <h4 id='slideInCartMenu-text'>{cardData.subtitle}</h4>
+          <h4 id='slideInCartMenu-text' className="price">{cardData.subtitle}</h4>
           <p id='slideInCartMenu-text'>{cardData.description}</p>
           <h5 id='slideInCartMenu-text'>{cardData.platsText}</h5>
+          </div>
           <button id='slideInCartMenu-button'>Add to cart</button>
         </div>
       )}

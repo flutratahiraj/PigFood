@@ -51,15 +51,13 @@ const port = process.env.PORT || 8000;
 
 //Test login
 //user array?
-app.get("/loginn", async (request, response) => {
+app.get("/login", async (request, response) => {
   const { rows } = await client.query(
     "SELECT * FROM accounts WHERE email = $1 AND password = $2",
     [request.body.email, request.body.password]
   );
   if (rows !== null && rows.length > 0) {
     response.status(200).send("Inloggad");
-  } else if (!request.body) {
-    response.status(700);
   } else {
     response.status(401).send("haloj");
   }

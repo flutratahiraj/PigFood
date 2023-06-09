@@ -2,6 +2,8 @@
   padding: 20px;
   position: absolute;
   z-index: 2;
+  /* position: sticky;
+  background-color: #094ec7; */
 }
 
 .navbar-logo {

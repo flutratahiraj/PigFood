@@ -1,6 +1,6 @@
 //use client instead of pool,
 import express from "express";
-import LocalClient from "./conection";
+import { client } from "./index";
 //select* retur hittat eller ej om den (tokens) finns det här om success
 
 // ej skrivit api eftersom det står i index
@@ -9,7 +9,7 @@ const accountRouter = express.Router();
 //Användarnamn och lösenord extraheras från req.body.
 accountRouter.post("/login", (req, res) => {
   const { userName, passWord } = req.body;
-  LocalClient.query(
+  client.query(
     // SELECT-fråga mot databasen för att kontrollera om användarnamn och lösenord matchas i databasen.
     "SELECT * FROM piguser WHERE username = $1 AND password = $2",
     [userName, passWord],
@@ -32,11 +32,11 @@ accountRouter.post("/login", (req, res) => {
 accountRouter.post("/createaccount", (req, res) => {
   // Extrahera användaruppgifter från req.body
   const { firstName, secondName, userName, passWord } = req.body;
-  LocalClient.query(
+  client.query(
     //INSERT-fråga utförs mot databasen för att lägga till användaruppgifterna i databasen.
     "INSERT INTO piguser(username, password, firstname, secondname) VALUES ($1, $2, $3, $4)",
     [userName, passWord, firstName, secondName],
-    (error, result) => {
+    (error) => {
       if (error) {
         console.error("Error creating account:", error);
         res.status(500).json({ message: "Error creating account" });

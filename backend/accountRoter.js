@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 //use client instead of pool,
 const express_1 = __importDefault(require("express"));
-const conection_1 = __importDefault(require("./conection"));
+const index_1 = require("./index");
 //select* retur hittat eller ej om den (tokens) finns det här om success
 // ej skrivit api eftersom det står i index
 const accountRouter = express_1.default.Router();
@@ -13,7 +13,7 @@ const accountRouter = express_1.default.Router();
 //Användarnamn och lösenord extraheras från req.body.
 accountRouter.post("/login", (req, res) => {
     const { userName, passWord } = req.body;
-    conection_1.default.query(
+    index_1.client.query(
     // SELECT-fråga mot databasen för att kontrollera om användarnamn och lösenord matchas i databasen.
     "SELECT * FROM piguser WHERE username = $1 AND password = $2", [userName, passWord], (error, result) => {
         if (error) {
@@ -34,9 +34,9 @@ accountRouter.post("/login", (req, res) => {
 accountRouter.post("/createaccount", (req, res) => {
     // Extrahera användaruppgifter från req.body
     const { firstName, secondName, userName, passWord } = req.body;
-    conection_1.default.query(
+    index_1.client.query(
     //INSERT-fråga utförs mot databasen för att lägga till användaruppgifterna i databasen.
-    "INSERT INTO piguser(username, password, firstname, secondname) VALUES ($1, $2, $3, $4)", [userName, passWord, firstName, secondName], (error, result) => {
+    "INSERT INTO piguser(username, password, firstname, secondname) VALUES ($1, $2, $3, $4)", [userName, passWord, firstName, secondName], (error) => {
         if (error) {
             console.error("Error creating account:", error);
             res.status(500).json({ message: "Error creating account" });

@@ -8,7 +8,7 @@ import ConfirmPigButton from "./buttons/ConfirmPigButton";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/CreateAccount.css";
-
+import { useAuth } from "./AuthContext";
 // Valideringsschema med Yup
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required("First name is required"),
@@ -25,6 +25,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const CreateAccount = () => {
+  const { toggleLogin } = useAuth();
   const navigate = useNavigate();
   const [termsChecked, setTermsChecked] = useState(false);
   const [dataHandlingChecked, setDataHandlingChecked] = useState(false);
@@ -41,7 +42,8 @@ const CreateAccount = () => {
     try {
       //sparas i response
       const response = await axios.post(
-        "http://localhost:8000/api/createaccount",
+        "https://pigfood-ek0e.onrender.com/api/createaccount",
+        // "http://localhost:8000/api/createaccount",
         {
           firstName: values.firstName,
           secondName: values.secondName,
@@ -52,6 +54,7 @@ const CreateAccount = () => {
       const { data } = response;
 
       if (data.message === "Account created successfully") {
+        toggleLogin();
         toast.success("Account created successfully", {
           autoClose: 500, // Notisen stängs efter 3 sekunder
         });
@@ -98,7 +101,7 @@ const CreateAccount = () => {
       validationSchema={validationSchema}
       onSubmit={HandleAccount}
     >
-      {({ errors, touched }) => (
+      {() => (
         <Form className="create-container">
           <img
             id="cross-down"

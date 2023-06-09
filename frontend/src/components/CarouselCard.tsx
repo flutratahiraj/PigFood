@@ -45,7 +45,7 @@ function CarouselCard(props: TitleProp) {
   }, []);
 
   const cardData = {
-    image: "bildens-url",
+    image: "http://localhost:8000/images/pizza/1.jpg",
     title: props.title,
     subtitle: "30 Pig Bucks",
     description:
@@ -107,7 +107,7 @@ function CarouselCard(props: TitleProp) {
   };
 
   return (
-    <div>
+    <div id="CC-container">
       <div
         id="carouselExampleControls"
         className="carousel slide"
@@ -116,18 +116,18 @@ function CarouselCard(props: TitleProp) {
         <div className="carousel-inner">
           <div className="carousel-item active">
             {/* http://localhost:8000  module heroku */}
-            <img
+            {/* <img
               src="http://localhost:8000/images/chili.jpg"
               className="d-block w-100"
               alt="..."
-            />
+            /> */}
           </div>
-          <div className="carousel-item">
+          {/* <div className="carousel-item">
             <img src="..." className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
+          </div> */}
+          {/* <div className="carousel-item">
             <img src="..." className="d-block w-100" alt="..." />
-          </div>
+          </div> */}
         </div>
         <a
           className="carousel-control-prev"

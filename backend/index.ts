@@ -81,8 +81,57 @@ app.use("/images", express.static("images"));
 app.use(express.static(path.join(path.resolve(), "public")));
 const port = process.env.PORT || 8000;
 
+//Test login
+//user array?
+app.get("/login", async (request, response) => {
+  const { rows } = await client.query(
+    "SELECT * FROM accounts WHERE email = $1 AND password = $2",
+    [request.body.email, request.body.password]
+  );
+  if (rows !== null && rows.length > 0) {
+    response.status(200).send("Inloggad");
+  } else {
+    response.status(401).send("haloj");
+  }
+});
 
+const users: [{ username: string; password: string }] = [
+  { username: "flutra", password: "secret" },
+];
 
+app.post("/login", async (request, response) => {
+  const { rows } = await client.query(
+    "SELECT * FROM users WHERE username = $1 AND password = $2",
+    [request.body.email, request.body.password]
+  );
+
+  rows[0].username;
+  if (rows !== null && rows.length > 0) {
+    response.status(200).send("Inloggad");
+  } else {
+    response.status(401).send("Unauthorized");
+  }
+  console.log(request.body.email);
+  console.log(request.body.password);
+  // console.log(request.query.email);
+  if (!request.body.email || !request.body.password) {
+    response.status(400).send("Bad Request");
+  }
+
+  users.find(
+    () =>
+      request.body.email === users[0].username &&
+      request.body.password === users[0].password
+  );
+
+  if (
+    request.body.email !== users[0].username ||
+    request.body.password !== users[0].password
+  ) {
+    response.status(401).send("Unauthorized");
+  }
+  response.send("Formuläret är mottaget.");
+});
 
 // Tidigare kod, skillnaden är portnr
 app.listen(port, () => {

@@ -1,0 +1,45 @@
+.main {
+  border: 30px solid #fbff1d;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 20px;
+  padding: 50px 0;
+}
+
+.input-container button {
+  background-color: #094ec7;
+  color: white;
+  border: none;
+  height: 30px;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 16px auto;
+}
+
+input {
+  display: block;
+}
+
+.recipe-item {
+  background-color: #094ec7;
+  color: white;
+  margin: 8px;
+  padding: 16px;
+  border-radius: 8px;
+}
+.recipe-item p {
+  padding: 0;
+  margin: 0;
+}
+
+.author {
+}
+
+.recipe {
+}

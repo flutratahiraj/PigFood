@@ -14,6 +14,7 @@ import AuthProvider from "./components/AuthContext";
 import HeaderMobile from "./components/HeaderMobile";
 import HMLoggedIn from "./components/HeaderMobileLoggedIn";
 import { useAuth } from "./components/AuthContext";
+import RecipePage from "./views/RecipePage";
 
 function Root() {
   const { isLoggedIn } = useAuth();
@@ -58,6 +59,10 @@ function App() {
         {
           element: <CreateAccount />,
           path: "/createaccount",
+        },
+        {
+          element: <RecipePage />,
+          path: "/recipe",
         },
         {
           element: <LogIn />,

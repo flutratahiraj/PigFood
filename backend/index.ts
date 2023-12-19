@@ -22,45 +22,59 @@ export const client = new Client({
   user: process.env.PGUSER,
 });
 
-//min lokala anslutning
-LocalClient.connect();
-//från handou: "publicering via Heroku"
-//varför är det "UNDERSCORE_request"
-app.get("/api", (_request, response) => {
-  response.send({ hello: "World" });
+client.connect();
+
+client
+  .query(
+    `CREATE TABLE IF NOT EXISTS recipes (
+  id SERIAL PRIMARY KEY,
+  recipe VARCHAR(255),
+  author VARCHAR(255)
+);`
+  )
+  .then(() => console.log("added"))
+  .catch(() => console.log("not added :("));
+
+app.post("/create-recipe", async (req, res) => {
+  const { author, recipe } = req.body;
+
+  const data = await client.query(
+    "INSERT INTO recipes (recipe, author) VALUES ($1, $2) RETURNING *",
+    [recipe, author]
+  );
+
+  res.json(data.rows);
+});
+
+app.get("/get-recipes", async (req, res) => {
+  const data = await client.query("SELECT * FROM recipes");
+  res.json(data.rows);
 });
 
 app.get("/feedback", async (request, response) => {
-
   response.send([
-
     {
-      name: 'Lisa McFlanagan',
-      image: 'AVATAR.png',
+      name: "Lisa McFlanagan",
+      image: "AVATAR.png",
       description:
-        'This food website is the true gem in the gastronomic universe! The dishes here are so mouthwatering, I can practically taste them through my screen. I\'ve become a self-proclaimed foodie ninja, effortlessly navigating through the menu, unleashing my inner epicurean. Warning: side effects may include sudden cravings, uncontrollable foodgasms, and an addiction to refreshing the page for new culinary adventures',
-      nationality: 'Probably Irish'
+        "This food website is the true gem in the gastronomic universe! The dishes here are so mouthwatering, I can practically taste them through my screen. I've become a self-proclaimed foodie ninja, effortlessly navigating through the menu, unleashing my inner epicurean. Warning: side effects may include sudden cravings, uncontrollable foodgasms, and an addiction to refreshing the page for new culinary adventures",
+      nationality: "Probably Irish",
     },
     {
-      name: 'Bubba',
-      image: 'Bubba.svg',
+      name: "Bubba",
+      image: "Bubba.svg",
       description:
-        '“Wowza! This food website is like a flavor explosion in my mouth, and my taste buds are doing the happy dance! I use it all the time. It feels great to contribute to a better global environment and for my economy.”',
-      nationality: 'Probably Irish',
+        "“Wowza! This food website is like a flavor explosion in my mouth, and my taste buds are doing the happy dance! I use it all the time. It feels great to contribute to a better global environment and for my economy.”",
+      nationality: "Probably Irish",
     },
     {
-      name: 'Seb Murphy',
-      image: 'AVATAR.png',
-      description:
-        '“This site makes me fat and happy.”',
-      nationality: 'Probably Irish',
+      name: "Seb Murphy",
+      image: "AVATAR.png",
+      description: "“This site makes me fat and happy.”",
+      nationality: "Probably Irish",
     },
-  ]
-);
-
-
+  ]);
 });
-
 
 // // Tidigare kod
 // //göra images mappen tillgänglig via http://localhost/images
